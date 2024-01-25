@@ -1,0 +1,109 @@
+* {
+  font-size: 1em;
+  background-color: rgb(250, 248, 215);
+}
+
+header {
+  display: block;
+  padding: 24px 24px 42px 24px;
+  border-bottom: 2px solid black;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+#highscores {
+  float: left;
+}
+
+#highscores:hover {
+  color: purple;
+  cursor: pointer;
+}
+
+#time {
+ float: right;
+}
+
+.card {
+  background-color: rgb(231, 226, 218);
+  border: 1px solid black;
+  border-radius: 14px;
+  box-shadow: rgb(42, 42, 42) 4px;
+  margin: auto;
+  padding: 21px;
+  padding-bottom: 12px;
+  width: 80%;
+  margin-top: 70px;
+}
+
+#question,
+#input,
+#input p,
+#answers,
+#enter-score,
+#scoreboard,
+#tally {
+  background-color: rgb(231, 226, 218);
+}
+
+#scoreboard p {
+  background-color: rgb(231, 226, 218);
+  color: purple;
+}
+
+#question {
+  font-size: larger;
+  padding-bottom: 8px;
+}
+
+#input {
+  padding-top: 8px 8px 0px 8px;
+}
+
+#answers p {
+  background-color: purple;
+  color: rgb(250, 248, 215);
+  margin: auto;
+  margin-top: 8px;
+  border-radius: 11px;
+  padding: 8px;
+}
+
+#answers p:hover {
+  background-color: rgb(250, 248, 215);
+  color: purple;
+  cursor: pointer;
+}
+
+button {
+  background-color: purple;
+  color: rgb(250, 248, 215);
+  margin: auto;
+  margin-top: 8px;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+button:hover {
+  background-color: rgb(250, 248, 215);
+  color: purple;
+  cursor: pointer;
+}
+
+#user-name {
+    background-color: rgb(250, 248, 215);
+    margin: auto;
+    margin-top: 8px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#tally {
+  padding-top: 10px;
+  font-style: italic;
+  font-size: smaller;
+  color: rgb(42, 42, 42);
+}

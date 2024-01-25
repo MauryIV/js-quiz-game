@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Code Quiz</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>JavaScript Code Quiz</h1>
+      <p id="highscores">Highscores</p>
+      <p id="time">Time Left: 60</p>
+    </header>
+    <main>
+      <section class="card">
+        <div id="question"></div>
+        <div id="input" style="display: none;">
+          <p>You will have 60 seconds to try and answer as many questions correctly as possible. Each question is worth 1 point towards your final score. If any are answered incorrectly, 5 seconds will be deducted from your time.</p>
+          <button id="start">Start Quiz</button>
+        </div>
+        <div id="answers" style="display: none;">
+          <p id="a"></p>
+          <p id="b"></p>
+          <p id="c"></p>
+          <p id="d"></p>
+        </div>
+        <div id="enter-score" style="display: none;">
+          <input id="user-name" placeholder="Name for Highscore"/>
+          <button id="submit">Submit</button>
+        </div>
+        <div id="scoreboard" style="display: none;">
+          <p id="first"></p>
+          <p id="second"></p>
+          <p id="third"></p>
+          <p id="forth"></p>
+          <button id="lets-beat-it">Lets beat it!</button>
+        </div>
+        <div id="tally" style="display: none;"></div>
+      </section>
+    </main>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
