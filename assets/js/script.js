@@ -1,3 +1,4 @@
+// Here is all the variables used throughout JS but mostly is querySelectors
 var time = "";
 var timeLeft = "";
 var highscores = document.querySelector("#highscores")
@@ -21,6 +22,7 @@ var letsBeatIt = document.querySelector("#lets-beat-it");
 var tally = document.querySelector("#tally");
 var score = 0;
 
+// This is for the time to run in the background and end at 0
 function timer() {
   time = 60;
   timeLeft = setInterval(function() {
@@ -33,6 +35,7 @@ function timer() {
   }, 1000);
 }
 
+// here is to start, editing the HTML to show what is wanted
 function intro() {
   question.textContent = "Welcome to the JavaScript Code Quiz!"
   scoreboard.style.display = "none"
@@ -46,11 +49,13 @@ function intro() {
   start.addEventListener("click", quiz, {once: true})
 }
 
+// keeping score here
 function scoreTally() {
   tally.textContent = "Correct!";
   score++;
 }
 
+// penalty for getting an answer wrong and a failsafe uncase an answer is wrong while time is under 5 seconds
 function timeOff() {
   tally.textContent = "Incorrect"
   if (time > 4) {
@@ -65,6 +70,7 @@ function timeOff() {
   }
 }
 
+// setting the score to 0 to start and beginning the quiz
 function quiz() {
   score = 0
   input.style.display = "none"
@@ -72,10 +78,10 @@ function quiz() {
     answers.style.display = "block"
   }
   tally.textContent = ""
-  
   questionOne()
 }
 
+// all the next "question" functions are the same, besides the text. The {once,true} is to keep it from listening throught the program
 function questionOne() {
   question.textContent = "1: What is the correct way to declare a JavaScript variable?"
   a.textContent = "A: var myVariable;"
@@ -220,11 +226,9 @@ function questionNine() {
   d.textContent = "D: undefined"
   answers.addEventListener("click", function(event) {
     if (event.target.id === "a") {
-      console.log("nine")
       scoreTally() 
       questionTen()
     } else {
-      console.log("nine")
       timeOff()
       questionTen()
     }
@@ -239,17 +243,16 @@ function questionTen() {
   d.textContent = "D: array.length{}"
   answers.addEventListener("click", function(event) {
     if (event.target.id === "b") {
-      console.log("ten")
       scoreTally() 
       submitScore()
     } else {
-      console.log("ten")
       timeOff()
       submitScore()
     }
   }, {once: true});
 }
 
+// here is when the score comes up at the end, and displays the user point submit
 function submitScore() {
   clearInterval(timeLeft);
   if (score > 0) {
@@ -262,6 +265,7 @@ function submitScore() {
   if (enterScore.style.display === "none") {
     enterScore.style.display = "block"
   }
+  // here is where the scores are held in local storage followed by if statements that make it where only the top scores show up
   submit.addEventListener("click", function(event) {
     var initials = userName.value
     var scores = JSON.parse(localStorage.getItem("userScore"))||[{"initials":"initials","score":0}, {"initials":"initials","score":0}, {"initials":"initials","score":0}]
@@ -300,6 +304,7 @@ function submitScore() {
   }, {once: true});
 }
 
+// here is where the top 4 scores are shown and the HTML is manipulated to show that
 function highscore() {
   clearInterval(timeLeft);
   enterScore.style.display = "none"
@@ -318,6 +323,7 @@ function highscore() {
   letsBeatIt.addEventListener("click", intro, {once: true})
 }
 
+// this is for the highscore button on the top left to check highscores anytime
 highscores.addEventListener("click", highscore)
 
 intro();
